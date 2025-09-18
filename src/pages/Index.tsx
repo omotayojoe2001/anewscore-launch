@@ -1,15 +1,9 @@
-import { useEffect } from 'react';
 import CountdownTimer from '@/components/CountdownTimer';
 import EmailSignup from '@/components/EmailSignup';
 
 const Index = () => {
   // Set launch date - adjust this to your desired launch date
   const launchDate = new Date('2024-12-31T23:59:59');
-
-  const handleCountdownComplete = () => {
-    // Redirect to main platform when countdown ends
-    window.location.href = '/platform'; // Update this URL as needed
-  };
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-8">
@@ -26,8 +20,7 @@ const Index = () => {
         {/* Countdown Timer */}
         <section className="space-y-8">
           <CountdownTimer 
-            targetDate={launchDate} 
-            onComplete={handleCountdownComplete}
+            targetDate={launchDate}
           />
         </section>
 

@@ -9,10 +9,9 @@ interface TimeLeft {
 
 interface CountdownTimerProps {
   targetDate: Date;
-  onComplete?: () => void;
 }
 
-const CountdownTimer = ({ targetDate, onComplete }: CountdownTimerProps) => {
+const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const CountdownTimer = ({ targetDate, onComplete }: CountdownTimerProps) => {
       const difference = targetDate.getTime() - new Date().getTime();
       
       if (difference <= 0) {
-        onComplete?.();
         return { days: 0, hours: 0, minutes: 0, seconds: 0 };
       }
 
@@ -40,7 +38,7 @@ const CountdownTimer = ({ targetDate, onComplete }: CountdownTimerProps) => {
     setTimeLeft(calculateTimeLeft());
 
     return () => clearInterval(timer);
-  }, [targetDate, onComplete]);
+  }, [targetDate]);
 
   return (
     <div className="flex justify-center items-center gap-8 md:gap-12">

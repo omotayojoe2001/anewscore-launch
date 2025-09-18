@@ -12,22 +12,13 @@ const EmailSignup = () => {
     e.preventDefault();
     
     if (!email || !email.includes('@')) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
       return;
     }
 
     setIsLoading(true);
     
-    // Simulate API call
+    // Simulate API call - no popup notifications
     setTimeout(() => {
-      toast({
-        title: "Success!",
-        description: "You'll be notified when ANEWSPORTAL launches.",
-      });
       setEmail('');
       setIsLoading(false);
     }, 1000);
