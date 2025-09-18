@@ -2,8 +2,8 @@ import CountdownTimer from '@/components/CountdownTimer';
 import EmailSignup from '@/components/EmailSignup';
 
 const Index = () => {
-  // Set launch date - adjust this to your desired launch date
-  const launchDate = new Date('2024-12-31T23:59:59');
+  // Set launch date - Monday September 22, 2025 at 12:00 AM
+  const launchDate = new Date('2025-09-22T00:00:00');
 
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4 py-8">
